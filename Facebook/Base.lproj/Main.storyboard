@@ -454,12 +454,12 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Placeholder" textAlignment="natural" minimumFontSize="17" id="5ry-dI-fc7">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" id="5ry-dI-fc7">
                                         <frame key="frameInset" minX="25" minY="63" width="270" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mWO-cH-BZT">
                                         <frame key="frameInset" minX="13" minY="121" width="293" height="52"/>
@@ -467,6 +467,9 @@
                                         <state key="normal" image="login_button_disabled"/>
                                         <state key="disabled" image="login_button_disabled"/>
                                         <state key="selected" image="logging_in_button"/>
+                                        <connections>
+                                            <action selector="didPressLogin:" destination="DCn-8S-mxP" eventType="touchUpInside" id="nLO-hR-RXb"/>
+                                        </connections>
                                     </button>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="white" id="n1A-jy-p0f">
                                         <frame key="frameInset" minX="263" minY="137" width="20" height="20"/>
@@ -475,21 +478,18 @@
                                 </subviews>
                                 <gestureRecognizers/>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="Ldf-FW-MG7">
-                                <frame key="frameInset" minX="112" minY="146" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.17254901960784313" green="0.26666666666666666" blue="0.52549019607843139" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="n1A-jy-p0f" id="97I-T2-yfw"/>
+                        <outlet property="emailField" destination="W51-pW-yi2" id="Qbo-cV-ILX"/>
                         <outlet property="fieldSuperView" destination="4Dq-yc-Qdg" id="b8e-Vl-bTl"/>
                         <outlet property="labelSuperview" destination="TKB-XT-Fp0" id="rmc-Cs-Hhf"/>
+                        <outlet property="loginButton" destination="mWO-cH-BZT" id="n1S-PS-8lf"/>
                         <outlet property="logo" destination="www-zo-sDp" id="dJf-K0-Wlh"/>
+                        <outlet property="passwordField" destination="5ry-dI-fc7" id="kLG-d5-Atz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="97s-v0-iRp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -637,7 +637,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create_photo" id="t6c-ja-Jzm">
-                                <frame key="frameInset"/>
+                                <frame key="frameInset" minX="-1" maxX="1"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6cu-9j-bFW">
